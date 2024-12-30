@@ -1,5 +1,6 @@
 import { Box, Typography, Grid, Container } from "@mui/material";
 import React from "react";
+import Earth from '../../assest/img/aboutUs/Earth.jfif'
 
 function WeAre() {
     return (
@@ -12,18 +13,21 @@ function WeAre() {
 
                     <Grid container spacing={3} alignItems="center">
                         {/* Left Section: Image Placeholder */}
-                        <Grid item xs={12} md={6}  >
-                            <Box
-                                sx={{
+                        <Grid item xs={12} md={6}>
+                            <img
+                                src={Earth}
+                                alt="Descriptive Alt Text"
+                                style={{
                                     width: "100%",
                                     height: { xs: 200, md: 450 },
-                                    backgroundColor: "#E0E0E0",
+                                    objectFit: "cover",
                                 }}
-                            ></Box>
+                            />
                         </Grid>
 
+
                         {/* Right Section: Text Content */}
-                        <Grid item xs={12} md={6} sx={{ mt: { xl: -10, lg: -6 } }}>
+                        <Grid item xs={12} md={6}>
                             <Typography sx={{ fontWeight: "700", color: '#1E1E1E', marginBottom: 3, fontSize: { xl: 32, lg: 32, md: 30, sm: 25, xs: 20 }, fontFamily: '"Nunito", sans-serif' }}>
                                 Wayonaa: Changing the World of E-Scooters One at a Time
                             </Typography>
