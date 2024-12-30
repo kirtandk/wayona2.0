@@ -1,6 +1,6 @@
 import { Box, Typography, Grid, Container } from "@mui/material";
 import React from "react";
-import Earth from '../../assest/img/aboutUs/Earth.jfif'
+import Earth from '../../assest/img/Logo.webp'
 
 function WeAre() {
     return (
