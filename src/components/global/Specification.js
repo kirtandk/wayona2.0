@@ -33,23 +33,33 @@ export default function Specification() {
         }
     ];
 
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
+
     return (
         <Box sx={{ py: 4 }}>
             <Container maxWidth="md">
-                <Typography variant="h4" gutterBottom sx={{ color: '#1E1E1E', my: 3, fontFamily: '"Cardo", serif', fontWeight: '700', display: 'flex', justifyContent: 'center', fontSize: { xs: '1.5rem', sm: '2.5rem' }, textAlign: { xs: 'center', sm: 'left' } }} >
+                <Typography variant="h4" gutterBottom sx={{ color: '#1E1E1E', my: 3, fontFamily: '"Cardo", serif', fontWeight: '700', display: 'flex', justifyContent: 'center', fontSize: { xs: '1.5rem', sm: '2.5rem' }, textAlign: { xs: 'center', sm: 'left' } }}>
                     Specification
                 </Typography>
                 <Grid container spacing={2}>
                     {data.map((item, index) => (
                         <Grid item xs={12} key={index}>
-                            <Accordion sx={{ boxShadow: 1, borderRadius: 1 }}>
+                            <Accordion
+                                sx={{ boxShadow: 1, borderRadius: 1 }}
+                                expanded={expanded === index}
+                                onChange={handleChange(index)}
+                            >
                                 <AccordionSummary
                                     expandIcon={<AddIcon />}
                                     aria-controls={`panel${index + 1}-content`}
                                     id={`panel${index + 1}-header`}
                                     sx={{
                                         backgroundColor: '#E6E6E6',
-                                        borderBottom: '1px solidrgb(1, 1, 1)',
+                                        borderBottom: '1px solid rgb(1, 1, 1)',
                                         '&:hover': { color: '#FB7C00' }
                                     }}
                                 >

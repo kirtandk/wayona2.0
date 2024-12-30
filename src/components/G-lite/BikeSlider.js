@@ -45,7 +45,7 @@ const BikeSlider = () => {
 
 
     return (
-        <Box>
+        <Box >
             <Typography sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, justifyContent: 'center', alignItems: 'center', fontFamily: '"Cardo", serif', fontSize: { xs: 20, sm: 22, md: 26, lg: 28 }, fontWeight: 600, textAlign: 'center', mt: 5, mb: 2 }}>
                 UNFORGETTABLE RIDE
                 <Typography variant="span" sx={{ color: '#FB7C00', fontSize: { xs: 20, sm: 22, md: 26, lg: 28 }, fontWeight: 600, fontFamily: '"Cardo", serif', marginTop: { xs: '8px', sm: '0' }, ml: 2 }}  >
@@ -54,32 +54,32 @@ const BikeSlider = () => {
             </Typography>
 
             {/* Show Carousel on Small Screens */}
-            {isSmDown && (
-                <Container>
-                    <Slider {...settings}>
-                        {cardData.map((card) => (
-                            <Box
-                                key={card.id}
-                                sx={{
-                                    display: 'flex',
-                                    justifyContent: 'center',
-                                    alignItems: 'center',
-                                    height: 400,
-                                    backgroundImage: `url(${card.image})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                    borderRadius: '2px',
-                                    px: 2,
-                                }}
-                            />
-                        ))}
-                    </Slider>
-                </Container>
-            )}
+            {/*{isSmDown && (*/}
+            {/*    <Container>*/}
+            {/*        <Slider {...settings}>*/}
+            {/*            {cardData.map((card) => (*/}
+            {/*                <Box*/}
+            {/*                    key={card.id}*/}
+            {/*                    sx={{*/}
+            {/*                        display: 'flex',*/}
+            {/*                        justifyContent: 'center',*/}
+            {/*                        alignItems: 'center',*/}
+            {/*                        height: 400,*/}
+            {/*                        backgroundImage: `url(${card.image})`,*/}
+            {/*                        backgroundSize: 'cover',*/}
+            {/*                        backgroundPosition: 'center',*/}
+            {/*                        borderRadius: '2px',*/}
+            {/*                        px: 2,*/}
+            {/*                    }}*/}
+            {/*                />*/}
+            {/*            ))}*/}
+            {/*        </Slider>*/}
+            {/*    </Container>*/}
+            {/*)}*/}
 
             {/* Show Static Slider on Larger Screens */}
-            {!isSmDown && (
-                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', }} >
+            {/*{!isSmDown && (*/}
+                <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', overflowX:"auto"}} >
                     <Box sx={{ height: 380, display: 'flex', flexWrap: 'nowrap', justifyContent: 'start', position: 'relative', }} >
                         {cardData.map((card) => (
                             <Box
@@ -109,7 +109,7 @@ const BikeSlider = () => {
                         ))}
                     </Box>
                 </Box>
-            )}
+            {/*)}*/}
         </Box>
     );
 };

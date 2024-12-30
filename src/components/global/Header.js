@@ -8,6 +8,7 @@ import Logo from '../../assest/img/Logo.webp';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
+import {useNavigate} from 'react-router-dom'
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 const Header = () => {
@@ -16,6 +17,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   // const [anchorEl, setAnchorEl] = useState(null);
   const [activeMenu, setActiveMenu] = useState(null);
+  const  navigate = useNavigate()
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -320,10 +322,22 @@ return (
 
                   }}
               >
-                  <Box>G-Razor</Box>
-                  <Box>G-Lite</Box>
-                  <Box>G-One</Box>
-                  <Box>Astino Coming Soon!!</Box>
+                  <Box onClick={() => {
+                      navigate("/grazor")
+                      toggleMobileMenu()
+                  }}>G-Razor</Box>
+                  <Box onClick={() => {
+                      navigate("/glite")
+                      toggleMobileMenu()
+                  }}>G-Lite</Box>
+                  <Box onClick={() => {
+                      navigate("/gone")
+                      toggleMobileMenu()
+                  }}>G-One</Box>
+                  <Box onClick={() => {
+                      navigate("/")
+                      toggleMobileMenu()
+                  }}>Astino Coming Soon!!</Box>
               </Box>}
           </Typography>
           <Typography sx={{ my: 2, cursor: 'pointer', '&:hover': { color: '#FB7C00' } }}>
@@ -345,8 +359,14 @@ return (
 
                     }}
                 >
-                    <Typography>Dealer Locator</Typography>
-                    <Typography>Become a Dealer</Typography>
+                    <Typography onClick={() => {
+                        navigate("/dealerlocator")
+                        toggleMobileMenu()
+                    }}>Dealer Locator</Typography>
+                    <Typography onClick={() => {
+                        navigate("/becomedealer")
+                        toggleMobileMenu()
+                    }}>Become a Dealer</Typography>
                 </Typography>}
 
             </Typography>

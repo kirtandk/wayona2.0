@@ -140,7 +140,7 @@ const GLitePage = () => {
                                 sx={{
                                     position: "absolute",
                                     // top: -44,
-                                    left: '-70%',
+                                    left: {xs:'-75%',lg: '-70%'},
                                     width: "100%",
                                     height: "110%",
                                     backgroundColor: 'white',
@@ -152,10 +152,10 @@ const GLitePage = () => {
                                 textAlign: "center",
                                 zIndex: 1,
                                 mt: {xs: 4, md: 'unset'},
-                                display: {xs: 'flex', sm: 'unset'},
+                                display: {xs: 'flex'},
                                 justifyContent: 'center'
                             }}>
-                                <Box sx={{width: {xs: 160, sm: 'auto'}}}>
+                                <Box sx={{width: {xs: 160}}}>
                                     <img
                                         src={img1}
                                         alt="Top Speed"
@@ -175,10 +175,10 @@ const GLitePage = () => {
                                 textAlign: "center",
                                 zIndex: 1,
                                 mt: {xs: 4, md: 'unset'},
-                                display: {xs: 'flex', sm: 'unset'},
+                                display: {xs: 'flex'},
                                 justifyContent: 'center'
                             }}>
-                                <Box sx={{width: {xs: 160, sm: 'auto'}}}>
+                                <Box sx={{width: {xs: '50%'}}}>
                                     <img
                                         src={img2}
                                         alt="Motor Power"
@@ -198,10 +198,10 @@ const GLitePage = () => {
                                 textAlign: "center",
                                 zIndex: 1,
                                 mt: {xs: 4, md: 'unset'},
-                                display: {xs: 'flex', sm: 'unset'},
+                                display: {xs: 'flex'},
                                 justifyContent: 'center'
                             }}>
-                                <Box sx={{width: {xs: 160, sm: 'auto'}}}>
+                                <Box sx={{width: {xs: 160}}}>
                                     <img
                                         src={img3}
                                         alt="Battery"

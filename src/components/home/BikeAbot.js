@@ -43,7 +43,7 @@ function BikeAbout() {
                         <Grid item xs={12} md={4} sm={6} height={{xl:821,lg:700}} lg={4}>
                             <Box sx={{ borderRadius: "10px", overflow: "hidden", position: "relative",height:'100%' ,border:'1px solid #E6E6E6'}}>
                                 {/* Background Image */}
-                              <Box height={{xl:400,xs:300}}>
+                              <Box height={{xl:400,xs:265}}>
                                   <Typography component="img" src={BG} sx={{ width: "100%", height: {xl:"100%",xs:"auto"} }} />
                                   {/* Bike 1 Image Hover Effect */}
                                   <Box sx={{ position: "absolute", top: {xl:"13%",xs:'10%'}, left: "10%", transition: "transform 0.3s ease-in-out" }}>
@@ -136,7 +136,7 @@ function BikeAbout() {
                         <Grid item xs={12} md={4} sm={6} height={{xl:821,lg:700}} lg={4}>
                             <Box sx={{ borderRadius: "10px", overflow: "hidden", position: "relative",height:'100%',border:'1px solid #E6E6E6' }}>
                                 {/* Background Image */}
-                                <Box height={{xl:400,xs:300}}>
+                                <Box height={{xl:400,xs:265}}>
                                 <Typography component="img" src={BG} sx={{ width: "100%", height: {xl:"100%",xs:"auto"} }} />
                                 {/* Bike 2 Image Hover Effect */}
                                 <Box sx={{ position: "absolute", top: {xl:"13%",xs:'10%'}, left: "10%" }}>
@@ -228,7 +228,7 @@ function BikeAbout() {
                         <Grid item xs={12} md={4} sm={6} height={{xl:821,lg:700}} lg={4}>
                             <Box sx={{ borderRadius: "10px", overflow: "hidden", position: "relative",height:'100%',border:'1px solid #E6E6E6' }}>
                                 {/* Background Image */}
-                                <Box height={{xl:400,xs:300}}>
+                                <Box height={{xl:400,xs:265}}>
                                 <Typography component="img" src={BG} sx={{ width: "100%", height: {xl:"100%",xs:"auto"} }} />
                                 {/* Bike 3 Image Hover Effect */}
                                 <Box sx={{ position: "absolute", top: {xl:"13%",xs:'10%'}, left: "10%" }}>
