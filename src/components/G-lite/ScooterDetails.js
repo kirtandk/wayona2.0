@@ -1,6 +1,5 @@
 
 
-
 import React, { useEffect, useState } from "react";
 import { Box, Typography, Grid, Stack, IconButton, Container } from "@mui/material";
 
@@ -29,6 +28,7 @@ const colorOptions = [
 
 const ScooterDetails = () => {
   const [selectedColor, setSelectedColor] = useState("Black");
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const getScooterImages = () => {
     switch (selectedColor) {
@@ -56,7 +56,6 @@ const ScooterDetails = () => {
   const [maxRange, setMaxRange] = useState(0);
   const [motorPower, setMotorPower] = useState(0);
 
-  // Independent countdown functions for each counter
   const countdown = (target, setter, delay = 50) => {
     let count = 0;
     const interval = setInterval(() => {
@@ -70,10 +69,20 @@ const ScooterDetails = () => {
   };
 
   useEffect(() => {
-    countdown(75, setMaxSpeed);  // Max Speed counter
-    countdown(50, setMaxRange); // Max Range counter
-    countdown(100, setMotorPower); // Motor Power counter with faster speed
+    countdown(75, setMaxSpeed);
+    countdown(50, setMaxRange);
+    countdown(100, setMotorPower);
   }, []);
+
+  const handleColorChange = (color) => {
+    if (color !== selectedColor) {
+      setIsTransitioning(true);
+      setTimeout(() => {
+        setSelectedColor(color);
+        setIsTransitioning(false);
+      }, 300); // Transition duration matches the CSS animation
+    }
+  };
 
   return (
     <Container maxWidth="lg">
@@ -116,11 +125,7 @@ const ScooterDetails = () => {
                   <Typography variant="body2" color="#1E1E1E" sx={{ fontFamily: '"Nunito", sans-serif' }}>
                     MAX SPEED
                   </Typography>
-                  <Typography
-                    variant="h4"
-                    fontWeight="bold"
-                    sx={{ fontFamily: '"Nunito", sans-serif' }}
-                  >
+                  <Typography variant="h4" fontWeight="bold" sx={{ fontFamily: '"Nunito", sans-serif' }}>
                     {maxSpeed} Km
                   </Typography>
                 </Box>
@@ -128,11 +133,7 @@ const ScooterDetails = () => {
                   <Typography variant="body2" color="#1E1E1E" sx={{ fontFamily: '"Nunito", sans-serif' }}>
                     MAX RANGE
                   </Typography>
-                  <Typography
-                    variant="h4"
-                    fontWeight="bold"
-                    sx={{ fontFamily: '"Nunito", sans-serif' }}
-                  >
+                  <Typography variant="h4" fontWeight="bold" sx={{ fontFamily: '"Nunito", sans-serif' }}>
                     {maxRange} Km
                   </Typography>
                 </Box>
@@ -140,11 +141,7 @@ const ScooterDetails = () => {
                   <Typography variant="body2" color="#1E1E1E" sx={{ fontFamily: '"Nunito", sans-serif' }}>
                     MOTOR POWER
                   </Typography>
-                  <Typography
-                    variant="h4"
-                    fontWeight="bold"
-                    sx={{ fontFamily: '"Nunito", sans-serif' }}
-                  >
+                  <Typography variant="h4" fontWeight="bold" sx={{ fontFamily: '"Nunito", sans-serif' }}>
                     {motorPower} W
                   </Typography>
                 </Box>
@@ -163,6 +160,8 @@ const ScooterDetails = () => {
                   maxWidth: "300px",
                   objectFit: "contain",
                   margin: "0 auto",
+                  opacity: isTransitioning ? 0 : 1,
+                  transition: "opacity 0.3s ease",
                 }}
               />
               <img
@@ -173,6 +172,8 @@ const ScooterDetails = () => {
                   maxWidth: "300px",
                   objectFit: "contain",
                   margin: "0 auto",
+                  opacity: isTransitioning ? 0 : 1,
+                  transition: "opacity 0.3s ease",
                 }}
               />
             </Box>
@@ -196,7 +197,7 @@ const ScooterDetails = () => {
               {colorOptions.map((color) => (
                 <IconButton
                   key={color.name}
-                  onClick={() => setSelectedColor(color.name)}
+                  onClick={() => handleColorChange(color.name)}
                   sx={{
                     width: 30,
                     height: 30,
