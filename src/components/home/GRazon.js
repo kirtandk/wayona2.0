@@ -1,23 +1,20 @@
-
-
-
 import React, { useState, useEffect } from "react";
-import { Box, Typography, Grid, Slide } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 import Razor from '../../assest/img/home/RazorBike.jpg';
-
 import LiteCon from '../../assest/img/home/LiteCon.webp';
 import img1 from "../../assest/img/G-lite/Frame.png";
 import img2 from "../../assest/img/G-lite/Frame (1).png";
 import img3 from "../../assest/img/G-lite/Group.png";
 import One from "../../assest/img/home/OneBike.jpg";
 import AOS from "aos";
+import "aos/dist/aos.css";
 
 const GLitePage = () => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
         // Initialize AOS
-        AOS.init({duration: 1000});
+        AOS.init({ duration: 2000 });
 
         // Animate count from 0 to 75
         let start = 0;
@@ -38,8 +35,6 @@ const GLitePage = () => {
         return () => clearInterval(interval);
     }, []);
 
-
-
     return (
         <Box
             sx={{
@@ -51,42 +46,43 @@ const GLitePage = () => {
                 my: 6,
             }}
         >
-            <Grid container spacing={2} alignItems="center" justifyContent="space-between" sx={{height: {md:700}}}>
+            <Grid container spacing={2} alignItems="center" justifyContent="space-between" sx={{ height: { md: 700 } }}>
                 {/* Left Side: One Charge Text */}
                 <Grid item xs={12} md={4}>
-                        <Box sx={{display: 'flex',justifyContent: 'center',alignItems: 'center'}}
-                             data-aos="fade-right"
-                             data-aos-duration="2000"
-                             data-aos-easing="ease-in-out"
-                             data-aos-once="false">
-                            <Box sx={{textAlign: 'center'}}>
-                                <Typography
-                                    variant="body2"
-                                    sx={{
-                                        fontFamily: '"Nunito", sans-serif',
-                                        color: '#000',
-                                        fontWeight: 600,
-                                        fontSize: 20,
-                                    }}
-                                >
-                                    One Charge And Get Up To
-                                </Typography>
-                                <Typography
-                                    variant="h3"
-                                    fontWeight="bold"
-                                    sx={{
-                                        mt: 1,
-                                        color: '#FB7C00',
-                                        fontSize: {xs: 50, sm: 80, md: 100},
-                                        fontFamily: '"Nunito", sans-serif',
-                                    }}
-                                >
-                                    {count}Km
-                                </Typography>
-                            </Box>
+                    <Box
+                        sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                        data-aos="fade-right"
+                        data-aos-duration="2000"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="false"
+                    >
+                        <Box sx={{ textAlign: 'center' }}>
+                            <Typography
+                                variant="body2"
+                                sx={{
+                                    fontFamily: '"Nunito", sans-serif',
+                                    color: '#000',
+                                    fontWeight: 600,
+                                    fontSize: 20,
+                                }}
+                            >
+                                One Charge And Get Up To
+                            </Typography>
+                            <Typography
+                                variant="h3"
+                                fontWeight="bold"
+                                sx={{
+                                    mt: 1,
+                                    color: '#FB7C00',
+                                    fontSize: { xs: 50, sm: 80, md: 100 },
+                                    fontFamily: '"Nunito", sans-serif',
+                                }}
+                            >
+                                {count}Km
+                            </Typography>
                         </Box>
+                    </Box>
                 </Grid>
-
 
                 {/* Center: Scooter Image */}
                 <Grid item xs={12} md={4}>
@@ -97,20 +93,22 @@ const GLitePage = () => {
                         data-aos-easing="ease-in-out"
                         data-aos-once="false"
                     >
-                            <Box>
-                                <Box sx={{fontSize: 33 , fontWeight: 600}}>G-LITE</Box>
-                                <Box sx={{fontSize: {xs:24,lg:33},   fontFamily: '"Nunito", sans-serif',}}>Classic, Timeless, Secure, Upgraded.</Box>
+                        <Box>
+                            <Box sx={{ fontSize: 33, fontWeight: 600 }}>G-LITE</Box>
+                            <Box sx={{ fontSize: { xs: 24, lg: 33 }, fontFamily: '"Nunito", sans-serif' }}>
+                                Classic, Timeless, Secure, Upgraded.
                             </Box>
-                            <Typography
-                                component="img"
-                                src={Razor}
-                                sx={{
-                                    maxWidth: "100%",
-                                    width: {xs: '90%', sm: '100%'},
-                                    height: "100%",
-                                }}
-                            />
                         </Box>
+                        <Typography
+                            component="img"
+                            src={Razor}
+                            sx={{
+                                maxWidth: "100%",
+                                width: { xs: '90%', sm: '100%' },
+                                height: "100%",
+                            }}
+                        />
+                    </Box>
                 </Grid>
 
                 {/* Right Side: LiteCon Image */}

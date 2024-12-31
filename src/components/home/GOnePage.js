@@ -1,8 +1,7 @@
-import React, {useState, useEffect} from "react";
-import {Box, Typography, Grid} from "@mui/material";
+import React, { useState, useEffect } from "react";
+import { Box, Typography, Grid } from "@mui/material";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 import One from "../../assest/img/home/OneBike.jpg";
 import img1 from "../../assest/img/G-lite/Frame.png";
 import img2 from "../../assest/img/G-lite/Frame (1).png";
@@ -12,13 +11,16 @@ const GLitePage = () => {
     const [count, setCount] = useState(0);
 
     useEffect(() => {
-        // Initialize AOS
-        AOS.init({duration: 1000});
+        // Initialize AOS with configurations
+        AOS.init({
+            duration: 2000, // Duration of animation
+            once: false, // Animation triggers only once
+        });
 
         // Animate count from 0 to 75
         let start = 0;
         const end = 75;
-        const duration = 3000;
+        const duration = 8000;
         const increment = 1;
         const intervalTime = (duration / end) * increment;
 
@@ -45,16 +47,17 @@ const GLitePage = () => {
                 my: 6,
             }}
         >
-            <Grid container spacing={2} alignItems="center" justifyContent="space-between" sx={{height: {md: 700}}}>
+            <Grid container spacing={2} alignItems="center" justifyContent="space-between" sx={{ height: { md: 700 } }}>
                 {/* Left Side */}
-                <Grid item xs={12} md={4} data-aos="fade-right">
-                    <Box sx={{display: "flex", justifyContent: "center", alignItems: "center"}}
-                         data-aos="fade-right"
-                         data-aos-duration="2000"
-                         data-aos-easing="ease-in-out"
-                         data-aos-once="false"
+                <Grid item xs={12} md={4} >
+                    <Box
+                        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+                        data-aos="fade-right"
+                        data-aos-duration="2000"
+                        data-aos-easing="ease-in-out"
+                        data-aos-once="false"
                     >
-                        <Box sx={{textAlign: "center"}}>
+                        <Box sx={{ textAlign: "center" }}>
                             <Typography
                                 variant="body2"
                                 sx={{
@@ -72,7 +75,7 @@ const GLitePage = () => {
                                 sx={{
                                     mt: 1,
                                     color: "#FB7C00",
-                                    fontSize: {xs: 50, sm: 80, md: 100},
+                                    fontSize: { xs: 50, sm: 80, md: 100 },
                                     fontFamily: '"Nunito", sans-serif',
                                 }}
                             >
@@ -83,7 +86,7 @@ const GLitePage = () => {
                 </Grid>
 
                 {/* Center */}
-                <Grid item xs={12} md={4} data-aos="fade-up">
+                <Grid item xs={12} md={4} >
                     <Box
                         textAlign="center"
                         data-aos="fade-up"
@@ -92,16 +95,17 @@ const GLitePage = () => {
                         data-aos-once="false"
                     >
                         <Box>
-                            <Box sx={{fontSize: 33, fontWeight: 600}}>G-LITE</Box>
-                            <Box sx={{fontSize: {xs: 24, lg: 33}, fontFamily: '"Nunito", sans-serif',}}>Classic,
-                                Timeless, Secure, Upgraded.</Box>
+                            <Box sx={{ fontSize: 33, fontWeight: 600 }}>G-LITE</Box>
+                            <Box sx={{ fontSize: { xs: 24, lg: 33 }, fontFamily: '"Nunito", sans-serif' }}>
+                                Classic, Timeless, Secure, Upgraded.
+                            </Box>
                         </Box>
                         <Typography
                             component="img"
                             src={One}
                             sx={{
                                 maxWidth: "100%",
-                                width: {xs: "90%", sm: "100%"},
+                                width: { xs: "90%", sm: "100%" },
                                 height: "100%",
                             }}
                         />
@@ -129,75 +133,81 @@ const GLitePage = () => {
                         <Box
                             sx={{
                                 position: "absolute",
-                                left: {xs: '-75%', lg: '-70%'},
+                                left: { xs: '-75%', lg: '-70%' },
                                 width: "100%",
                                 height: "110%",
                                 backgroundColor: 'white',
-                                borderRadius: '100%'
+                                borderRadius: '100%',
                             }}
                         />
 
-                        <Box sx={{
-                            textAlign: "center",
-                            zIndex: 1,
-                            mt: {xs: 4, md: 'unset'},
-                            display: {xs: 'flex'},
-                            justifyContent: 'center'
-                        }}>
-                            <Box sx={{width: {xs: 160}}}>
+                        <Box
+                            sx={{
+                                textAlign: "center",
+                                zIndex: 1,
+                                mt: { xs: 4, md: 'unset' },
+                                display: { xs: 'flex' },
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <Box sx={{ width: { xs: 160 } }}>
                                 <img
                                     src={img1}
                                     alt="Top Speed"
-                                    style={{width: "50px", height: "50px"}}
+                                    style={{ width: "50px", height: "50px" }}
                                 />
-                                <Typography variant="h6" sx={{fontWeight: "bold", color: "#666", marginTop: "10px"}}>
+                                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#666", marginTop: "10px" }}>
                                     TOP SPEED
                                 </Typography>
-                                <Typography variant="body2" sx={{color: "#666"}}>
+                                <Typography variant="body2" sx={{ color: "#666" }}>
                                     With a continuous speed of 25 km/h
                                 </Typography>
                             </Box>
                         </Box>
 
-                        <Box sx={{
-                            textAlign: "center",
-                            zIndex: 1,
-                            mt: {xs: 4, md: 'unset'},
-                            display: {xs: 'flex'},
-                            justifyContent: 'center'
-                        }}>
-                            <Box sx={{width: {xs: '50%'}}}>
+                        <Box
+                            sx={{
+                                textAlign: "center",
+                                zIndex: 1,
+                                mt: { xs: 4, md: 'unset' },
+                                display: { xs: 'flex' },
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <Box sx={{ width: { xs: '50%' } }}>
                                 <img
                                     src={img2}
                                     alt="Motor Power"
-                                    style={{width: "50px", height: "50px"}}
+                                    style={{ width: "50px", height: "50px" }}
                                 />
-                                <Typography variant="h6" sx={{fontWeight: "bold", color: "#666", marginTop: "10px"}}>
+                                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#666", marginTop: "10px" }}>
                                     MOTOR POWER
                                 </Typography>
-                                <Typography variant="body2" sx={{color: "#666"}}>
+                                <Typography variant="body2" sx={{ color: "#666" }}>
                                     250W BLDC Hub Motor
                                 </Typography>
                             </Box>
                         </Box>
 
-                        <Box sx={{
-                            textAlign: "center",
-                            zIndex: 1,
-                            mt: {xs: 4, md: 'unset'},
-                            display: {xs: 'flex'},
-                            justifyContent: 'center'
-                        }}>
-                            <Box sx={{width: {xs: 160}}}>
+                        <Box
+                            sx={{
+                                textAlign: "center",
+                                zIndex: 1,
+                                mt: { xs: 4, md: 'unset' },
+                                display: { xs: 'flex' },
+                                justifyContent: 'center',
+                            }}
+                        >
+                            <Box sx={{ width: { xs: 160 } }}>
                                 <img
                                     src={img3}
                                     alt="Battery"
-                                    style={{width: "50px", height: "50px"}}
+                                    style={{ width: "50px", height: "50px" }}
                                 />
-                                <Typography variant="h6" sx={{fontWeight: "bold", color: "#666", marginTop: "10px"}}>
+                                <Typography variant="h6" sx={{ fontWeight: "bold", color: "#666", marginTop: "10px" }}>
                                     BATTERY
                                 </Typography>
-                                <Typography variant="body2" sx={{color: "#666"}}>
+                                <Typography variant="body2" sx={{ color: "#666" }}>
                                     48V 30Ah/60V 30Ah NMC safe lithium-ion Battery
                                 </Typography>
                             </Box>

@@ -14,9 +14,9 @@ const GLitePage = () => {
         // Initialize AOS with infinite animation
         AOS.init({
             duration: 2000,
-            easing: "ease-in-out",
+            // easing: "ease-in-out",
             once: false,
-            mirror: true, // Repeats animations when scrolling back
+            // mirror: true, // Repeats animations when scrolling back
         });
 
         // Animate count from 0 to 75

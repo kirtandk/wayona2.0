@@ -36,7 +36,7 @@
 // export default Home
 
 
-import React from "react";
+import React, {useEffect} from "react";
 import { motion } from "framer-motion";
 import Slider from "../components/home/Slider";
 import LightIntro from "../components/home/LightIntro";
@@ -52,14 +52,23 @@ import GOnePage from "../components/home/GOnePage";
 import GRazorPage from "../components/home/GRazon";
 import BikeAbout from "../components/home/BikeAbot";
 import { Box } from "@mui/material";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const Home = () => {
   // Animation Variants
   const fadeIn = {
     hidden: { opacity: 0, y: 50 },
     visible: { opacity: 1, y: 0, transition: { duration: 1} },
-
   };
+  useEffect(() => {
+      AOS.init({
+          duration: 2000,
+          easing: "ease-in-out",
+          once: false,
+      });
+  },[])
 
   return (
     <Box sx={{overflow:"auto",scrollbarWidth:"none"}}>
