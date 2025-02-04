@@ -44,6 +44,7 @@ const GLitePage = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 my: 6,
+                overflow: "hidden,
             }}
         >
             <Grid container spacing={2} alignItems="center" justifyContent="space-between" sx={{ height: { md: 700 } }}>
